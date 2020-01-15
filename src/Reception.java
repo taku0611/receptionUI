@@ -89,7 +89,7 @@ public class Reception extends JFrame {
         public void actionPerformed(ActionEvent e) {
             final String strnum = "0123456789";
             final String str1to16 = "12345678910111213141516";
-            final String title="ErrorMessage";
+            final String title = "ErrorMessage";
 
             if (e.getActionCommand() == Reception.btnNumberCheck_code) {
                 final String str = Reception.this.textAddress.getText();
@@ -97,14 +97,14 @@ public class Reception extends JFrame {
                 if (str.length() == 0) {
                     JLabel label = new JLabel("数字を入力してください");
                     label.setForeground(Color.RED);
-                    JOptionPane.showMessageDialog(null, label,title,JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, label, title, JOptionPane.WARNING_MESSAGE);
                     return;
                 }
                 for (int i = 0; i < str.length(); i++) {
                     if (strnum.indexOf(str.substring(i, i + 1)) == -1) {
                         JLabel label = new JLabel("数字を入力してください");
                         label.setForeground(Color.RED);
-                        JOptionPane.showMessageDialog(null, label,title,JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(null, label, title, JOptionPane.WARNING_MESSAGE);
                         return;
                     }
                 }
@@ -113,83 +113,19 @@ public class Reception extends JFrame {
                 if (str.length() != 1 && str.length() != 2) {
                     JLabel label = new JLabel("正しい住所を入力してください");
                     label.setForeground(Color.RED);
-                    JOptionPane.showMessageDialog(null, label,title,JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, label, title, JOptionPane.WARNING_MESSAGE);
                     return;
                 }
 
                 if (str1to16.indexOf(str) == -1) {
                     JLabel label = new JLabel("正しい住所を入力してください");
                     label.setForeground(Color.RED);
-                    JOptionPane.showMessageDialog(null, label,title,JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, label, title, JOptionPane.WARNING_MESSAGE);
                     return;
                 }
             }
         }
     }
-
-
-
-
-
-
-    /*
-    private class PushButtonActionListener implements ActionListener {
-        private static final String message02 = "正しい住所を入力してください";
-        private static final String message01 = "数字を入力してください";
-        private static final String ErrorDialog_title = "Error Message";
-        JFrame frame = null;
-
-        public PushButtonActionListener(final JFrame af) {
-            this.frame = af;
-        }
-
-        public void actionPerformed(final ActionEvent e) {
-            final String strnum = "0123456789";
-            final String str1to16 = "12345678910111213141516";
-
-            /**
-             * 数字チェックの場合
-
-            if (e.getActionCommand() == Reception.btnNumberCheck_code) {
-                final String str = Reception.this.textAddress.getText();
-                if (str.length() == 0) {
-                    final ErrDialog dia = new ErrDialog(this.frame,
-                            PushButtonActionListener.ErrorDialog_title,
-                            PushButtonActionListener.message01);
-
-                    return;
-                }
-                for (int i = 0; i < str.length(); i++) {
-                    if (strnum.indexOf(str.substring(i, i + 1)) == -1) {
-                        final ErrDialog dia = new ErrDialog(this.frame,
-                                PushButtonActionListener.ErrorDialog_title,
-                                PushButtonActionListener.message01);
-                        return;
-                    }
-                }
-
-                /**
-                 * 1〜16の場合
-
-
-                if (str.length() != 1 && str.length() != 2) {
-                    final ErrDialog dia = new ErrDialog(this.frame,
-                            PushButtonActionListener.ErrorDialog_title,
-                            PushButtonActionListener.message02);
-                    return;
-                }
-
-                if (str1to16.indexOf(str) == -1) {
-                    final ErrDialog dia = new ErrDialog(this.frame,
-                            PushButtonActionListener.ErrorDialog_title,
-                            PushButtonActionListener.message02);
-                    return;
-                }
-            }
-        }
-
-    }
-    */
 
 
     public static void main(final String[] args) {
